@@ -1,61 +1,82 @@
 # Neural Network Playground with Streamlit
 
-This project demonstrates how to build a neural network model using Streamlit, TensorFlow/Keras, and scikit-learn. It allows users to interactively choose dataset parameters, neural network architecture, and training settings through a sidebar interface. The app will generate a scatter plot of the dataset, train a neural network model, and visualize the training metrics, model summary, test accuracy, and decision boundaries.
+This project is a neural network playground built with Streamlit. It allows users to interactively create and train neural networks on various synthetic datasets. The application provides a user-friendly interface for configuring dataset parameters, neural network architecture, and training parameters.
 
-## Requirements
+## Features
 
-To run this project, you'll need the following Python libraries:
+- Select from different synthetic datasets: `make_classification`, `make_circles`, `make_moons`
+- Configure dataset parameters such as the number of samples, features, informative features, clusters, etc.
+- Configure neural network parameters such as the number of epochs, batch size, activation functions, number of hidden layers, and neurons per layer.
+- Display raw dataset scatter plot.
+- Display training and validation metrics (loss and accuracy).
+- Display model summary.
+- Evaluate test loss and accuracy.
+- Visualize decision boundary on the training data.
 
-- streamlit
-- numpy
-- pandas
-- matplotlib
-- seaborn
-- scikit-learn
-- tensorflow
-- mlxtend
+## Installation
 
-You can install all dependencies using the `requirements.txt` file:
+To run this application, you need to have Python installed on your system. Follow the steps below to set up the environment and run the application:
 
-```bash
+1. Clone the repository:
+
+```sh
+git clone https://github.com/yourusername/neural-network-playground.git
+cd neural-network-playground
+```
+
+2. Create a virtual environment and activate it:
+
+```sh
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+3. Install the required packages:
+
+```sh
 pip install -r requirements.txt
-Alternatively, you can manually install each dependency with the following commands:
-pip install streamlit
-pip install numpy
-pip install pandas
-pip install matplotlib
-pip install seaborn
-pip install scikit-learn
-pip install tensorflow
-pip install mlxtend
+```
 
-Features:
-Dataset Selection: Choose from make_classification, make_circles, or make_moons datasets.
-Data Parameters: Adjust the number of samples, features, clusters, and classes.
-Model Parameters: Define the number of hidden layers, neurons in each layer, activation functions, and learning rate.
-Training: Train the model using the selected parameters and visualize the training metrics (loss and accuracy).
-Decision Boundaries: Visualize the decision boundary for the training data.
+## Usage
 
-Interactive Sidebar Options:
-Dataset: Select from make_classification, make_circles, or make_moons.
-Number of Samples: Choose the total number of samples for the dataset.
-Number of Features: Select the number of features for classification (1-10).
-Number of Hidden Layers: Define the number of hidden layers in the neural network (1-10).
-Neurons per Layer: Set the number of neurons in each hidden layer.
-Activation Functions: Choose the activation functions for hidden and output layers (e.g., relu, tanh, sigmoid, softmax).
-Epochs: Set the number of epochs for training.
-Batch Size: Select the batch size for training.
-Learning Rate: Choose the learning rate for the optimizer.
-Test Data Size: Set the proportion of data for testing.
+To start the Streamlit application, run the following command:
 
-Visualizations:
-Dataset Plot: The scatter plot of the raw dataset.
-Training Metrics: Graphs showing training and validation loss and accuracy over epochs.
-Model Summary: A detailed summary of the neural network model.
-Decision Boundary: Visualization of the decision boundary for the training data.
+```sh
+streamlit run app.py
+```
 
-Example Use Case:
-This app is useful for:
-Learning: Understanding the effects of different neural network configurations on model performance.
-Experimentation: Trying different datasets and hyperparameters to see how they influence training.
-Visualization: Exploring decision boundaries and training metrics interactively.
+This will open a new tab in your web browser with the Streamlit application.
+
+## Configuration
+
+Use the sidebar to configure the following parameters:
+
+### Dataset Parameters
+
+- **Dataset**: Select the synthetic dataset (`make_classification`, `make_circles`, `make_moons`)
+- **Number of samples**: Adjust the number of samples in the dataset
+- **Number of features**: Adjust the number of features (only for `make_classification`)
+- **Number of informative features**: Adjust the number of informative features (only for `make_classification`)
+- **Number of clusters**: Adjust the number of clusters (only for `make_classification`)
+
+### Model Parameters
+
+- **Number of epochs**: Adjust the number of training epochs
+- **Batch size**: Adjust the batch size for training
+- **Activation function for hidden layers**: Select the activation function for hidden layers (`tanh`, `relu`)
+- **Activation function for output layer**: Select the activation function for the output layer (`sigmoid`, `softmax`)
+- **Number of hidden layers**: Adjust the number of hidden layers
+- **Number of neurons in hidden layers**: Adjust the number of neurons in each hidden layer
+- **Test Data Size**: Adjust the size of the test data
+- **Learning Rate**: Adjust the learning rate
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Acknowledgements
+
+- [Streamlit](https://streamlit.io/) for providing an easy-to-use framework for building interactive web applications.
+- [scikit-learn](https://scikit-learn.org/) for providing tools for data generation and preprocessing.
+- [TensorFlow](https://www.tensorflow.org/) for providing tools for building and training neural networks.
+- [mlxtend](http://rasbt.github.io/mlxtend/) for providing tools for plotting decision regions.
